@@ -8,6 +8,20 @@ class CardNews extends HTMLElement {
   }
 
   build() {
+    const props = {
+      author: {
+        name: this.getAttribute("authorName") || "Anonymous",
+        img: this.getAttribute("authorImg") || "./assets/profile_default.png",
+        imgAlt: this.getAttribute("authorImgAlt") || "Author Profile Picture",
+      },
+      news: {
+        title: this.getAttribute("title") || "Title unavailable",
+        description:
+          this.getAttribute("description") || "Description unavailable",
+        img: this.getAttribute("newsImg") || "./assets/news_image_default.png",
+        imgAlt: this.getAttribute("newsImgAlt") || "News Cover Image",
+      },
+    };
     // create elements
     // container
     const componentRoot = document.createElement("div");
@@ -16,14 +30,12 @@ class CardNews extends HTMLElement {
     // card left
     const cardLeft = document.createElement("div");
     cardLeft.setAttribute("class", "card__left");
+
     // author
     const author = document.createElement("span");
-    const authorName = document.createTextNode(
-      this.getAttribute("authorName") || "Anonymous"
-    );
+    const authorName = document.createTextNode(props.author.name);
     const authorImg = document.createElement("img");
-    authorImg.src =
-      this.getAttribute("authorImg") || "./assets/profile_default.png";
+    authorImg.src = props.author.img;
     authorImg.alt = "Profile Image";
     authorImg.setAttribute("class", "author_img");
     author.appendChild(authorImg);
@@ -31,8 +43,9 @@ class CardNews extends HTMLElement {
     // title
     const title = document.createElement("h2");
     const description = document.createElement("h3");
-    title.innerText = this.getAttribute("title");
-    description.innerText = this.getAttribute("description");
+    title.innerText = props.news.title;
+    description.innerText = props.news.description;
+
     // push to card left container
     cardLeft.appendChild(author);
     cardLeft.appendChild(title);
@@ -42,8 +55,8 @@ class CardNews extends HTMLElement {
     const cardRight = document.createElement("div");
     cardRight.setAttribute("class", "card__right");
     const newsImg = document.createElement("img");
-    newsImg.src =
-      this.getAttribute("newsImg") || "./assets/news_image_default.png";
+    newsImg.src = props.news.img;
+    newsImg.alt = props.news.imgAlt;
     cardRight.appendChild(newsImg);
 
     // push elements to card
