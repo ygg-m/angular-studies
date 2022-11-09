@@ -25,6 +25,7 @@ class CardNews extends HTMLElement {
     authorImg.src =
       this.getAttribute("authorImg") || "./assets/profile_default.png";
     authorImg.alt = "Profile Image";
+    authorImg.setAttribute("class", "author_img");
     author.appendChild(authorImg);
     author.appendChild(authorName);
     // title
@@ -41,7 +42,8 @@ class CardNews extends HTMLElement {
     const cardRight = document.createElement("div");
     cardRight.setAttribute("class", "card__right");
     const newsImg = document.createElement("img");
-    newsImg.src = this.getAttribute("newsImg") || "./assets/news_image_default.png";
+    newsImg.src =
+      this.getAttribute("newsImg") || "./assets/news_image_default.png";
     cardRight.appendChild(newsImg);
 
     // push elements to card
@@ -53,9 +55,59 @@ class CardNews extends HTMLElement {
   styles() {
     const style = document.createElement("style");
 
-    style.innerText = `
-      
-    `
+    style.textContent = `
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        .card {
+          max-width: 700px;
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          outline: solid 1px rgb(70, 70, 70);
+          padding: .5rem 1rem;
+        }
+        
+        .author_img {
+          max-width: 20px;
+          border-radius: 50%;
+        }
+        
+        .card__left {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        
+        .card__left > h2 {
+          margin-top: 1rem;
+          font-size: 1.375rem;
+        }
+        
+        .card__left > span {
+          display: flex;
+          gap: .5rem;
+        }
+
+        .card__left > span,
+        .card__left > h3 {
+          font-size: 1rem;
+          font-weight: 400;
+          color: rgb(120, 120, 120);
+        }
+
+        .card__right {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    
+    `;
+
+    return style;
   }
 }
 
