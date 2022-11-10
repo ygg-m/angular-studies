@@ -1,0 +1,8 @@
+<h2>Using ngFor</h2>
+<ul>
+  Jobs
+  <li *ngFor="let j of jobs">{{ j }}</li>
+</ul>
+<input placeholder="new job" [(ngModel)]="newJob" />
+<button (click)="addJob()">Add new Job</button>
+<button (click)="removeJob()">Remove Job</button>

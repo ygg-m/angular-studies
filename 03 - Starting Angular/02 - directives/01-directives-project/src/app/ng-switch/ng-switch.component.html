@@ -1,0 +1,24 @@
+<h2>Using ngSwitch</h2>
+<div [ngSwitch]="authLevel">
+  <ul *ngSwitchCase="'player'">
+    <li>inventory</li>
+    <li>equipment</li>
+  </ul>
+  <ul *ngSwitchCase="'gm'">
+    <li>inventory</li>
+    <li>equipment</li>
+    <li>spawn monster</li>
+    <li>ban player</li>
+  </ul>
+  <ul *ngSwitchCase="'adm'">
+    <li>inventory</li>
+    <li>equipment</li>
+    <li>spawn monster</li>
+    <li>ban player</li>
+    <li>ban GM</li>
+  </ul>
+  Change role
+  <button (click)="changeAuthLevel('player')">Player</button>
+  <button (click)="changeAuthLevel('gm')">GameMaster</button>
+  <button (click)="changeAuthLevel('adm')">Admin</button>
+</div>

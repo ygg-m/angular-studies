@@ -1,0 +1,7 @@
+<h2>Using ngIf</h2>
+<button (click)="destroy()">Click me >:3</button>
+<p *ngIf="showCard; else secretCard">Don't click the button!!</p>
+
+<ng-template #secretCard>
+  <p>Nooo..! :(</p>
+</ng-template>

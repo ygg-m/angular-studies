@@ -1,11 +1,17 @@
 <h1>My App with Directives</h1>
-<button (click)="destroy()">I'm a button</button>
-<p *ngIf="showCard; else secretCard">card works!</p>
-
-<ng-template #secretCard>
-  <p>You destroied everything... :(</p>
-</ng-template>
-
-<ul>
-  <li *ngFor="let j of jobs">{{ j }}</li>
-</ul>
+<hr />
+<app-ng-if></app-ng-if>
+<hr />
+<app-ng-for></app-ng-for>
+<hr />
+<app-ng-switch></app-ng-switch>
+<hr />
+<app-ng-class></app-ng-class>
+<hr />
+<app-ng-style></app-ng-style>
+<hr />
+<app-ng-model></app-ng-model>
+<hr />
+<app-ng-template></app-ng-template>
+<hr />
+<app-ng-content></app-ng-content>
