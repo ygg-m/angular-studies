@@ -1,1 +1,14 @@
-<p>ng-style works!</p>
+<h2>Using ngStyle</h2>
+<div [ngStyle]="{ background: bgColor, color: txtColor }">Change my color!</div>
+
+Background
+<button (click)="changeBackground('yellow')">Yellow</button>
+<button (click)="changeBackground('pink')">Pink</button>
+<button (click)="changeBackground('purple')">Purple</button>
+<button (click)="changeBackground('cyan')">Cyan</button>
+
+Text
+<button (click)="changeText('black')">Black</button>
+<button (click)="changeText('white')">White</button>
+<button (click)="changeText('blue')">Blue</button>
+<button (click)="changeText('yellow')">Yellow</button>
