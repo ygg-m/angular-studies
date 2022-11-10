@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgForComponent implements OnInit {
   jobs: string[] = [];
+  newJob: string = '';
 
   constructor() {
     this.jobs = ['swordman', 'mage', 'archer', 'thief', 'merchant'];
@@ -14,9 +15,9 @@ export class NgForComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  newJob: string = '';
   addJob(): void {
     this.jobs.push(this.newJob);
+    this.newJob = '';
   }
   removeJob(): void {
     this.jobs.pop();
