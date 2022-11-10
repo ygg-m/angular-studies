@@ -1,0 +1,7 @@
+<app-card *ngIf="true; else secretBlock"></app-card>
+
+<ng-template #secretBlock>
+  <p>I'm a secret block! >:3</p>
+</ng-template>
+
+<router-outlet></router-outlet>

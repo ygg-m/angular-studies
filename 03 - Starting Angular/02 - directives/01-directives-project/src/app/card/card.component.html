@@ -1,0 +1,11 @@
+<h1>My App with Directives</h1>
+<button (click)="destroy()">I'm a button</button>
+<p *ngIf="showCard; else secretCard">card works!</p>
+
+<ng-template #secretCard>
+  <p>You destroied everything... :(</p>
+</ng-template>
+
+<ul>
+  <li *ngFor="let j of jobs">{{ j }}</li>
+</ul>
