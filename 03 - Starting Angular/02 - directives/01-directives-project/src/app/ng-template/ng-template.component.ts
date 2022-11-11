@@ -6,16 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ng-template.component.sass'],
 })
 export class NgTemplateComponent implements OnInit {
-  answer1: number = 12;
-  answer1Correct: boolean = false;
-
-  onKey(event: any, question: number) {
-    if (question === 1) {
-      if (event.target.value === this.answer1) {
-        this.answer1Correct = true;
-      }
-    }
-  }
+  lock1: boolean = false;
+  lock2: boolean = false;
+  lock3: boolean = false;
+  lock4: boolean = false;
+  lock5: boolean = false;
 
   constructor() {}
   ngOnInit(): void {}

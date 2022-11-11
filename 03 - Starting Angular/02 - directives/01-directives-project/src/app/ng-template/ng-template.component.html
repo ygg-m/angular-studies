@@ -1,6 +1,30 @@
 <h2>Using ngTemplate</h2>
-I'll show you a secret if you answer correctly! >:3
-<br />
-<br />
-6 x 2
-<input type="text" (keyup)="onKey($event, 1)" /> {{ answer1Correct }}
+<button (click)="lock1 = true">Show me the secret! >:3</button>
+
+<ng-template [ngIf]="lock1">
+  I love my daughter :3 <br />
+  <button (click)="lock2 = true">What about another one?</button>
+</ng-template>
+
+<ng-template [ngIf]="lock2">
+  I feel lost most of the times... <br />
+  <button (click)="lock3 = true">That's sad...</button>
+</ng-template>
+
+<ng-template [ngIf]="lock3">
+  But I keep going, if only for her! (And I try cheer me up so I go for myself
+  too.) <br />
+  <button (click)="lock4 = true">Nice!</button>
+</ng-template>
+
+<ng-template [ngIf]="lock4">
+  Whoever you are, thankyu for reading. <br />
+  <button (click)="lock5 = true">No prob, keep going!</button>
+</ng-template>
+
+<ng-template [ngIf]="lock5">
+  Life isn't fair, but everyone should try to make the best of it for
+  thenselves. A lot of people will try to make you fall so they can grow, but if
+  you have the choice to not do the same, your mind will be cleaner and you'll
+  feel better about yourselve in the end. <br />
+</ng-template>
